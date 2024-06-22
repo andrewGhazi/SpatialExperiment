@@ -47,8 +47,8 @@ test_that("SingleCellExperiment TO SpatialExperiment case 3" ,{
     # case 3: passing "spatial arguments" on populated sce
     # giving priority to "spatial args"
     colData(sce) <- DataFrame(xyz)
-    int_colData(sce)$spatialCoords <- as.matrix(xyz[, rev(.)])
     . <- c("pxl_col_in_fullres", "pxl_row_in_fullres")
+    int_colData(sce)$spatialCoords <- as.matrix(xyz[, rev(.)])
     spe <- toSpatialExperiment(sce, spatialCoordsNames=.)
     expect_s4_class(spe, .spe)
     expect_equal(spatialCoords(spe), as.matrix(xyz[, .]))
