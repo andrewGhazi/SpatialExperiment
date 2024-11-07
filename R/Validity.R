@@ -104,7 +104,7 @@ setValidity2("SpatialExperiment", .spe_validity)
         is.character(x),
         file.exists(x),
         # TODO: any other possible image formats? 
-        grepl("(\\.png|\\.jpg|\\.tif)$", x)))
+        grepl("(\\.png|\\.jpg|\\.tif\\.jpeg\\.tiff\\.PNG\\.JPG\\.TIF\\.JPEG\\.TIFF)$", x)))
     
     if (!is_valid)
         stop("'path' should be a length-one character",
